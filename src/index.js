@@ -4,10 +4,28 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+async function loadRom() {
+  try {
+    const response = await fetch('./roms/invaders');
+
+    if (!response.ok) {
+      return undefined;
+    }
+
+    const buffer = await response.arrayBuffer();
+    return new Uint8Array(buffer);
+  } catch (error) {
+    return null;
+  }
+}
+
+const ROM = await loadRom();
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <App />
+    <App rom={ROM} />
   </React.StrictMode>
 );
 

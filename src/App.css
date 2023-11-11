@@ -1,38 +1,41 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 100%;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.controls {
+  background-color: blueviolet;
+  height: 12.5%;
+}
+
+.debug {
+  flex: 1;
+  background-color: chartreuse;
+  color: orange;
+}
+
+.display {
+  background-image: url(../src/assets/Space-Invaders-Bezel.bmp);
+  background-size: cover;
+  display: relative;
+  justify-content: center; /* Centers children horizontally in the container */
+  align-items: center;
+  height: 87.5%;
+}
+
+.machine {
+  flex: 1;
+}
+
+.monitor {
+  position: absolute;
+  background-color: black;
+  border: 1px solid greenyellow;
+  top: 48%;
+  left: 25%;
+  width: 36%;
+  height: 39%;
+  transform: translate(-50%, -50%);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
